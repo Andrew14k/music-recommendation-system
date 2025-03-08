@@ -1,0 +1,5 @@
+Flask==2.1.1
+mysql-connector-python==8.0.28
+librosa==0.9.1
+pydub==0.25.1
+requests==2.26.0
