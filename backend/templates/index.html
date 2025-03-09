@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Artist Name</th>
+            <th>Song</th>
+            <th>BPM</th>
+            <th>Topic</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for song in songs %}
+            <tr>
+                <td>{{ song.artist_name }}</td>
+                <td><a href="{{ song.song }}" target="_blank">{{ song.song }}</a></td>
+                <td>{{ song.bpm }}</td>
+                <td>{{ song.topic }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

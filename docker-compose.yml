@@ -39,7 +39,7 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: musicdb
     ports:
-      - "3308:3308"  # Expose MySQL port (not recommended for production)
+      - "3308:3306"  # Expose MySQL port (not recommended for production)
     networks:
       - app-network
     volumes:
