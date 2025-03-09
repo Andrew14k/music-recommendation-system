@@ -10,15 +10,13 @@ services:
       - "5000:5000"  # Map backend container port to host port
     volumes: 
       - ./backend:/app 
+    environment:
+      - FLASK_ENV=development
+      - DATABASE_URL=mysql://root:rootpassword@db:3308/musicdb
     networks:
       - app-network
     depends_on:
       - db
-    environment:
-      - MYSQL_HOST=db
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=rootpassword
-      - MYSQL_DB=musicdb
 
   frontend:
     build:

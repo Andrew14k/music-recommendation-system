@@ -1,6 +1,15 @@
 # Use a Python base image
 FROM python:3.9-slim
 
+# Install the required dependencies for building mysqlclient
+RUN apt-get update && \
+    apt-get install -y \
+    pkg-config \
+    libmariadb-dev-compat \
+    libmariadb-dev \
+    build-essential && \
+    rm -rf /var/lib/apt/lists/*  # Clean up to reduce image size
+
 # Set environment variables to prevent Python from writing .pyc files
 ENV PYTHONUNBUFFERED=1
 
