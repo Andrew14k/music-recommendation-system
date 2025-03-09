@@ -4,8 +4,8 @@ Initialise git repository, create frontend, backend and database.
 Set up dockerfile and docker compose configuration for containerisation.
 
 ## 2 - Set up database - MySQL
-design database schema and tables. 
-Sewt up MySQL instance with docker.
+Design database schema and tables. 
+Set up MySQL instance with docker.
 Populate the database.
 
 ## 3 - Backend development - Python
