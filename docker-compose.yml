@@ -1,4 +1,4 @@
-version: "3.8"
+
 
 services:
   backend:
@@ -8,6 +8,10 @@ services:
     container_name: backend
     ports:
       - "5000:5000"  # Map backend container port to host port
+    volumes: 
+      - ./backend:/app 
+    networks:
+      - app-network
     depends_on:
       - db
     environment:
@@ -22,7 +26,9 @@ services:
       dockerfile: Dockerfile
     container_name: frontend
     ports:
-      - "3000:3000"  # Map frontend container port to host port
+      - "80:80"  # Map frontend container port to host port
+    networks:
+      - app-network
     depends_on:
       - backend
     environment:
@@ -35,10 +41,16 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: musicdb
     ports:
-      - "3308:3306"  # Expose MySQL port (not recommended for production)
+      - "3308:3308"  # Expose MySQL port (not recommended for production)
+    networks:
+      - app-network
     volumes:
       - db_data:/var/lib/mysql  # Persist MySQL data
 
 volumes:
   db_data:
     driver: local
+
+networks:
+  app-network:
+    driver: bridge
