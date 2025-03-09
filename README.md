@@ -1,4 +1,4 @@
-
+##Rebuilding previous dissertation project of same content - hence fast pushes/development
 ## 1 - Build project structure
 Initialise git repository, create frontend, backend and database.
 Set up dockerfile and docker compose configuration for containerisation.
