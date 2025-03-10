@@ -6,8 +6,10 @@ import mysql.connector
 import librosa
 from bs4 import BeautifulSoup
 import requests
+#from flask_cors import CORS
 
 app = Flask(__name__)
+#CORS(app)
 
 # Get the database URL from environment variables
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:rootpassword@db/musicdb'
